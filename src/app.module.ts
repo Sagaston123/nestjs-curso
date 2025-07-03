@@ -5,7 +5,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.${process.env.NODE_ENV }.env',
+      envFilePath: [`.develop.env`, `.env`],
       isGlobal: true,
     }),
     UsersModule
